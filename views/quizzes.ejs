@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de Quizzes</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
+
 <h1>Lista de Quizzes:</h1>
-<p>aqui se supone que van los quizzes</p>
-<nav>
-    <a href="/">Home</a>
-    <a href="/credits">Créditos</a>
-</nav>
-</body>
-</html>
+
+<% for (var i in quizzes){ %>
+ <% var quiz = quizzes [i]; %>
+ <p> Pregunta <%= quiz.id %>: <%= quiz.question %>? <%= quiz.answer%></p>
+<% } %>
+

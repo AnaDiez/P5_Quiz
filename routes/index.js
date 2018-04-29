@@ -1,16 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+//const sequelize = require('../models/index');BBDD
 
+const quizController = require('../controllers/quiz');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Quiz' });
+  res.render('index');
 });
 
 router.get('/credits', function (req,res,next) {
-    res.render('credits' , { title: 'Quiz' });
+    res.render('credits');
 });
 
-router.get('/quizzes', function (req,res,next) {
-    res.render('quizzes');
-});
+router.get('/quizzes', quizController.index);
+
 module.exports = router;
